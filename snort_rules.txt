@@ -1,4 +1,10 @@
-# You can add your own custom detection rules to local.rules file while configuring snort (/etc/snort/rules.local.rules)
+🧾 Custom Detection Rules
+
+Add custom detection rules to:
+sudo nano /etc/snort/rules/local.rules
+
+#You can add your own detection rules here. For example I have given few rules
+
 alert icmp any any -> $HOME_NET any (msg:"Ping Detected"; sid:100001; rev:1;)
 alert tcp any any -> $HOME_NET any (msg:"SYN Packet Detected"; sid:100002; rev:1;)
 alert tcp any any -> any any (msg:"Potential Port Scan to Privileged Ports"; sid:100003; rev:1;)
